@@ -2,50 +2,10 @@
 
 ## Features
 
-1. show random "Deepak Chopra Quote".
-2. put docker container to [bibbynet/cowsay-node](https://hub.docker.com/r/bibbynet/cowsay-node). 
- 
-
-## Build Container
-
-```
-docker build -t <YOUR CONTAINER NAME> .
-```
-
-## Run Container
-
-```
-docker run --rm -p 8080:8080 <YOUR CONTAINER NAME>
-```
-
-## docker-compose
-
-```
-version: "3.5"
-
-services:
-  cow-say: 
-    build:
-      context: ./
-      dockerfile: ./Dockerfile
-    ports:
-      - 8080:8080
-```
-
-## docker-compose from Docker Hub
-
-```
-version: "3.5"
-
-services:
-  cow-say: 
-    image: bibbynet/cowsay-node
-    ports:
-      - 8080:8080
-```
+Show random "Deepak Chopra Quote".
 
 ## demo
+
 https://cowsay-node.herokuapp.com/
 
-
-Enjoy it. ^_____^ ..
+Enjoy it. ^**\_**^ ..
