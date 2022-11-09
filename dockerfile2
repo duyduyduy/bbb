@@ -7,7 +7,7 @@ WORKDIR /app
 
 COPY /code/package.json /app/
 COPY   /code/package-lock.json /app/
-COPY ./code/public/* /app/public
+COPY ./code/public/* /app/public/
 COPY ./code/index.js /app/
 
 RUN  npm install
