@@ -1,0 +1,35 @@
+version: '3.3'
+services:
+    docker:
+        container_name: jenkins-docker
+        privileged: true
+        network_mode: jenkins
+        environment:
+            - DOCKER_TLS_CERTDIR=/certs
+        volumes:
+            - 'docker-certs-jk:/certs/client'
+            - 'jenkins_home:/var/jenkins_home'
+        ports:
+            - '2376:2376'
+        image: docker:dind
+    jenkins-new:
+            container_name: jenkins
+            network_mode: jenkins
+            environment:
+                - 'DOCKER_HOST=tcp://docker:2376'
+                - DOCKER_CERT_PATH=/certs/client
+                - DOCKER_TLS_VERIFY=1
+            ports:
+                - '8080:8080'
+                - '50000:50000'
+            volumes:
+                - 'jenkins_home:/var/jenkins_home'
+                - 'docker-certs-jk:/certs/client:ro'
+            image: 'jenkins-new:v1'
+            build: .
+networks: 
+  -jenkins:
+volumes:
+  docker-certs-jk:    
+  jenkins_home:  
+ 
