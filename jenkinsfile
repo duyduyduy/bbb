@@ -21,10 +21,10 @@ pipeline {
                 sh"""docker push duyduyduyduy/cow"""
                 sh"""    docker rmi cowfile  """
                 sh"""docker pull duyduyduyduy/cow"""
-                sh""" docker ps  -a"""
-                sh """ docker run -d -p 9090:8080 duyduyduyduy/cow"""
+                sh""" docker rm -f practical_mestorf """
+                sh """ docker run -d -p 9090:8080 -name super duyduyduyduy/cow"""
                 sh """sleep 10"""
-                sh """curl jenkins-docker:8081 """
+                sh """curl jenkins-docker:9090 """
             }
         }
     }
