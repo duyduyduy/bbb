@@ -12,7 +12,7 @@ pipeline {
                 sh """ls"""
                 sh """ docker ps """
                 sh """docker build -t cowfile -f jenkindockerfile ."""
-                sh """ docker run  --name -p 8001:8080 cow cowfile"""
+                sh """ docker run  --name cow -p 8001:8080  cowfile"""
 
                 // sh """ docker  build - """
                 // sh """ docker ps """
