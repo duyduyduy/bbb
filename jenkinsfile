@@ -18,6 +18,8 @@ pipeline {
                 sh """curl jenkins-docker:8081 """
             }
         }
+    }
+    stages{
         stage ('try again'){    
             steps{
                  
@@ -41,5 +43,5 @@ pipeline {
                 
             }
         }
-     
+    
 }
