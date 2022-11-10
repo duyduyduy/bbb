@@ -16,21 +16,6 @@ pipeline {
                 sh """ docker run -d --name cow -p 8081:8080  cowfile"""
                 sh """sleep 10"""
                 sh """curl jenkins-docker:8081 """
-            }
-        }
-    }
-    stages{
-        stage ('try again'){    
-            steps{
-                 
-            
-                // sh """ docker  build - """
-                // sh """ docker ps """
-                
-                 // sh """docker build -t cowfile -f jenkindockerfile ."""
-                // sh """docker rm -f cow"""
-             
-                // sleep 10
                   sh"""docker login  -u duyduyduyduy -p 123456789"""
                 sh"""docker tag cowfile duyduyduyduy/cow"""
                 sh"""docker push duyduyduyduy/cow"""
@@ -39,9 +24,9 @@ pipeline {
                 sh """ docker run  -p 9090:8080 duyduyduyduy/cow"""
                 sh """sleep 10"""
                 sh """curl jenkins-docker:8081 """
-         }
-                
             }
         }
+    }
+    
     
 }
