@@ -1,0 +1,32 @@
+pipeline {
+    agent {dockerfile {
+        filename 'jenkindockerfile'
+        
+        
+    }}
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+                sh """pwd"""
+                sh """ls"""
+                 sh """ls"""
+                sh """ cd file """
+                sh """ls"""
+                
+                 // sh """docker build -t cowfile -f jenkindockerfile ."""
+                // sh """docker rm -f cow"""
+             
+                // sleep 10
+                 // sh"""docker login  -u duyduyduyduy -p 123456789"""
+                // sh"""docker tag cowfile duyduyduyduy/cow"""
+                // sh"""docker push duyduyduyduy/cow"""
+                // sh"""    docker rmi cowfile  """
+                // sh"""docker pull duyduyduyduy/cow"""
+         }
+                
+            }
+        }
+     
+}
