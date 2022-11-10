@@ -63,9 +63,9 @@ pipeline {
 
 post {
         always{
-    emailext body : 'check console output at $BUILD_URL to view the result. \n\n  ${CHANGES}  \n\n  ----'
-    subject:'build in jenkins : $PROJECT_NAME - $BUILD_NUMBER'
-            to "duyittien12@gmail.com",
+    emailext body : 'check console output at $BUILD_URL to view the result. \n\n  ${CHANGES}  \n\n  ----',
+    subject:'build in jenkins : $PROJECT_NAME - $BUILD_NUMBER',
+            to "duyittien12@gmail.com"
 }
 
 }
