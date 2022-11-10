@@ -63,7 +63,7 @@ pipeline {
 
 post {
         always{
-    emailext body : 'check console output at $BUILD_URL to view the result. \n\n  ${CHANGES}  \n\n  ----' 
+    emailtext body : 'check console output at $BUILD_URL to view the result. \n\n  ${CHANGES}  \n\n  ----' 
     to "{EMAIL_TO}",
     subject:'build in jenkins : $PROJECT_NAME - $BUILD_NUMBER'
         }
