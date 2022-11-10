@@ -15,7 +15,7 @@ pipeline {
                 sh """docker rm -f cow"""
                 sh """ docker run -d --name cow -p 8081:8080  cowfile"""
                 sh """sleep 10"""
-                sh """curl jenkins-docker:8081 """
+                // sh """curl jenkins-docker:8081 """
                 sh"""docker login  -u duyduyduyduy -p 123456789"""
                 sh"""docker tag cowfile duyduyduyduy/cow"""
                 sh"""docker push duyduyduyduy/cow"""
