@@ -30,7 +30,7 @@ pipeline {
         }
         stage('stage 2'){
             steps {
-                ssh"""docker login  -u duyduyduyduy -p 123456789"""
+                docker login  -u duyduyduyduy -p 123456789
                 sh"""docker tag cowfile duyduyduyduy/cow"""
                 sh"""docker push duyduyduyduy/cow"""
                 sh"""    docker rm -f super  """
