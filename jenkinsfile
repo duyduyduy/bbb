@@ -1,9 +1,5 @@
 pipeline {
-    agent {dockerfile {
-        filename 'jenkindockerfile'
-        
-        
-    }}
+    agent any
 
     stages {
         stage('Hello') {
@@ -15,6 +11,12 @@ pipeline {
                 // sh """ cd file """
                 sh """ls"""
                 sh """ docker ps """
+                sh """docker build -t cowfile -f jenkindockerfile ."""
+                sh """ docker run  --name -p 8001:8080 cow cowfile"""
+
+                // sh """ docker  build - """
+                // sh """ docker ps """
+                
                  // sh """docker build -t cowfile -f jenkindockerfile ."""
                 // sh """docker rm -f cow"""
              
