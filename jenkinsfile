@@ -17,6 +17,8 @@ pipeline {
                 sh """sleep 10"""
                 sh """curl jenkins-docker:8081 """
             }
+        }
+        stage ('try again'){    
             steps{
                  
             
