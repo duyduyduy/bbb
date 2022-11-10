@@ -1,0 +1,5 @@
+docker ps 
+docker build -t name -f dockerfile2 .
+docker run -d -rm -p 8081:8080 --name cow name
+sleep 12
+docker exec -ti cow curl curl localhost:8081
