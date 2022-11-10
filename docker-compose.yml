@@ -3,7 +3,8 @@ services:
     docker:
         container_name: jenkins-docker
         privileged: true
-        network_mode: jenkins
+        networks: 
+            - jenkins
         environment:
             - DOCKER_TLS_CERTDIR=/certs
         volumes:
@@ -11,10 +12,12 @@ services:
             - 'jenkins_home:/var/jenkins_home'
         ports:
             - '2376:2376'
+            - 8081:8081
         image: docker:dind
     jenkins-new:
             container_name: jenkins
-            network_mode: jenkins
+            networks: 
+                - jenkins
             environment:
                 - 'DOCKER_HOST=tcp://docker:2376'
                 - DOCKER_CERT_PATH=/certs/client
@@ -28,7 +31,7 @@ services:
             image: 'jenkins-new:v1'
             build: .
 networks: 
-  -jenkins:
+   jenkins:
 volumes:
   docker-certs-jk:    
   jenkins_home:  

@@ -9,5 +9,6 @@ COPY /code/package.json /app/
 COPY   /code/package-lock.json /app/
 COPY ./code/public/* /app/public/
 COPY ./code/index.js /app/
-EXPOSE 2376
+EXPOSE 8080
+RUN npm install
 CMD ["node", "index.js"]
