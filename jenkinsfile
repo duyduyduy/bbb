@@ -14,7 +14,7 @@ pipeline {
                  sh """ls"""
                 sh """ cd file """
                 sh """ls"""
-                
+                sh """ docker ps """
                  // sh """docker build -t cowfile -f jenkindockerfile ."""
                 // sh """docker rm -f cow"""
              
