@@ -10,9 +10,9 @@ pipeline {
             steps {
                 echo 'Hello World'
                 sh """pwd"""
-                sh """ls"""
-                 sh """ls"""
-                sh """ cd file """
+                // sh """ls"""
+                //  sh """ls"""
+                // sh """ cd file """
                 sh """ls"""
                 sh """ docker ps """
                  // sh """docker build -t cowfile -f jenkindockerfile ."""
