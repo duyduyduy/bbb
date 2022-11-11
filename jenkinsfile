@@ -65,7 +65,7 @@ post {
         always{
      mail to: 'duyittien12@gmail.com',
     subject: "Job '${JOB_NAME}' (${BUILD_NUMBER}) ",
-    body: " "
+    body: " current build is ${result} "
 }
 
 }
