@@ -62,12 +62,16 @@ pipeline {
    
 
 post {
-        always{
+        success{
      mail to: 'duyittien12@gmail.com',
     subject: "Job '${JOB_NAME}' (${BUILD_NUMBER}) ",
-    body: " current build is ${result} "
+    body: " current build is success "
 }
-
+ failure{
+     mail to: 'duyittien12@gmail.com',
+    subject: "Job '${JOB_NAME}' (${BUILD_NUMBER}) ",
+    body: " current build is failure "
+}
 }
 
 
